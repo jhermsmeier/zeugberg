@@ -1,0 +1,51 @@
+{
+  "name": "zeugberg",
+  "version": "0.1.0",
+  "description": "",
+  "license": "MIT",
+  "keywords": [],
+  "main": "index.html",
+  "author": "Jonas Hermsmeier <jhermsmeier@gmail.com> (https://github.com/jhermsmeier)",
+  "dependencies": {
+    "bloodline": "~1.0.0",
+    "debug": "~2.1.2",
+    "glob-stream": "~4.0.1",
+    "inspector": "git://github.com/jhermsmeier/inspector",
+    "nw": "~0.12.0",
+    "yargs": "~3.4.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nw",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "homepage": "https://github.com/jhermsmeier/zeugberg",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jhermsmeier/zeugberg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jhermsmeier/zeugberg/issues"
+  },
+  "single-instance": false,
+  "window": {
+    "title": "zeugberg",
+    "width": 800,
+    "height": 600,
+    "position": "center",
+    "resizable": "true",
+    "show": false,
+    "focus": false
+  },
+  "webkit": {
+    "plugin": false,
+    "java": false,
+    "page-cache": true
+  },
+  "chromium-args": "--remote-debugging-port=9222",
+  "user-agent": "%name %ver (nw %nwver) (webkit %webkit_ver) (os %osinfo)",
+  "node-remote": "<local>",
+  "bin": {
+    "zeugberg": "bin/zeugberg.js"
+  }
+}
