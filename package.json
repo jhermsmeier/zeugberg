@@ -31,8 +31,8 @@
   "single-instance": false,
   "window": {
     "title": "zeugberg",
-    "width": 800,
-    "height": 600,
+    "width": 1024,
+    "height": 768,
     "position": "center",
     "resizable": "true",
     "show": false,
