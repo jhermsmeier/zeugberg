@@ -20,6 +20,25 @@ For now, as no reporters exist yet, it is recommended to run `zeugberg` with deb
 $ env DEBUG="*" zeugberg
 ```
 
+## API
+
+### Function `new Zeugberg( options )`
+
+#### Events
+
+- `suite` ( suite )
+- `suite:error` ( failedSuite, error )
+- `suite:end` ( suite )
+- `hook` ( fn )
+- `hook:error` ( fn, error )
+- `hook:end`
+- `test` ( test )
+- `test:pending` ( test )
+- `test:error` ( test, error )
+- `test:pass` ( test )
+- `test:end` ( test )
+- `aborted`
+
 ## CLI Switches
 
 - `--help, -h`: Show help
