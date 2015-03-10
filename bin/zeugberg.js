@@ -5,18 +5,20 @@ var childProcess = require( 'child_process' )
 var log = require( 'debug' )( 'ZEUGBERG:CLI' )
 var inspect = require( 'util' ).inspect
 
-// nw root path (package to execute)
+// Get nw.js root path (package to execute)
 var root = path.join( __dirname, '..' )
-// Path to nwjs executable
+// Path to nw.js executable
 var bin = nw.findpath()
 
-// nw cli arguments
+// Get cli arguments for nw.js
 var argv = process.argv.slice( 2 )
+// Determine if the --debug flag has been specified
+var debug = !!~argv.indexOf( '--debug' )
 
-// cwd where the process was started,
+// CWD where the process was started,
 // nw needs to chdir there
 argv.unshift( process.cwd() )
-// nw package root (zeugberg)
+// Package root (zeugberg)
 argv.unshift( root )
 
 log( 'ARGV', inspect( process.argv ) )
@@ -24,8 +26,12 @@ log( 'CWD', inspect( process.cwd() ) )
 
 // Child process options
 var options = {
+  // Inherit the environment
   env: process.env,
-  stdio: 'inherit',
+  // Ignore stderr, unless --debug is on
+  stdio: debug != true ?
+    [ 0, 1, 'ignore' ] :
+    [ 0, 1, 2 ],
 }
 
 // Spawn nw as a child process
