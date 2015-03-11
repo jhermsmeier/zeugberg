@@ -31,6 +31,7 @@ TAPR.prototype = {
     this.runner.on( 'uncaughtException', onError )
     
     this.runner.on( 'start', this.preamble.bind( this ) )
+    this.runner.on( 'suite', this.onSuite.bind( this ) )
     this.runner.on( 'test', this.onTest.bind( this ) )
     this.runner.on( 'test:pending', this.onTestPending.bind( this ) )
     this.runner.on( 'test:error', this.onTestError.bind( this ) )
@@ -48,6 +49,12 @@ TAPR.prototype = {
     var msg = error && error.message ?
       ' ' + error.message : ''
     console.log( 'Bail out!' + msg )
+  },
+  
+  onSuite: function( suite ) {
+    if( suite.title ) {
+      console.log( '# Suite: ' + suite.title )
+    }
   },
   
   onTest: function( test ) {
