@@ -10,6 +10,7 @@
 - **Zeugberg.Page `page`:** Page API exposed to tests
 - **Zeugberg.Suite `currentSuite`:** The currently running suite
 - **Zeugberg.Test `currentTest`:** The currently running test
+- **Array `reporters`:** List of registered reporters
 - **Number `failures`:** Number of test failures that occured
 
 #### Methods
@@ -18,6 +19,11 @@
 
 - **Array `patterns`:** Glob patterns for files to load
 - **Function `callback( error )`:** called when done loading files
+
+##### `reporter( mod, options )`
+
+- **String|Function `mod`:** Reporter name or function to register
+- **Object `options`:** Reporter options
 
 ##### `run( callback )`
 
@@ -29,6 +35,7 @@
 
 #### Events
 
+- `start`
 - `suite` ( suite )
 - `suite:error` ( failedSuite, error )
 - `suite:end` ( suite )
@@ -40,6 +47,8 @@
 - `test:error` ( test, error )
 - `test:pass` ( test )
 - `test:end` ( test )
+- `end`
+- `error`
 - `aborted`
 
 ### Function `new Zeugberg.Test( title, fn, suite )`
