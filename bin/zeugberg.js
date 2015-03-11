@@ -12,8 +12,12 @@ var bin = nw.findpath()
 
 // Get cli arguments for nw.js
 var argv = process.argv.slice( 2 )
+
 // Determine if the --debug flag has been specified
 var debug = !!~argv.indexOf( '--debug' )
+if( debug === true ) {
+  process.env[ 'DEBUG' ] = '*'
+}
 
 // CWD where the process was started,
 // nw needs to chdir there
