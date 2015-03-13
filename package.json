@@ -13,7 +13,7 @@
     "glob-stream": "~4.0.1",
     "inspector": "git://github.com/jhermsmeier/inspector",
     "nw": "~0.12.0",
-    "yargs": "~3.5.3"
+    "yargs": "~3.5.4"
   },
   "devDependencies": {},
   "scripts": {
