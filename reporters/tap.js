@@ -86,9 +86,10 @@ TAPR.prototype = {
   
   onEnd: function( failures ) {
     var percentage = failures !== 0 ?
-      (( failures / this.total ) * 100 ).toFixed( 2 ) :
+      ( 100 - (( failures / this.total ) * 100 )).toFixed( 2 ) :
       ( 100 ).toFixed( 2 )
-    console.log( 'FAILED tests ' + this.fails.join( ', ' ) )
+    if( failures )
+      console.log( 'FAILED tests: ' + this.fails.join( ', ' ) )
     console.log( 'Failed ' + failures + '/' + this.total + ' tests, ' + percentage + '% okay' )
   },
   
