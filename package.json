@@ -50,5 +50,8 @@
   },
   "chromium-args": "--ignore-certificate-errors --remote-debugging-port=9222",
   "user-agent": "%name %ver (nw %nwver) (webkit %webkit_ver) (os %osinfo)",
-  "node-remote": "<local>"
+  "node-remote": "<local>",
+  "bin": {
+    "zeugberg": "bin/zeugberg"
+  }
 }
