@@ -1,9 +1,15 @@
 {
   "name": "zeugberg",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "",
   "license": "MIT",
-  "keywords": [],
+  "keywords": [
+    "test",
+    "tests",
+    "testing",
+    "integration",
+    "nw"
+  ],
   "main": "index.html",
   "author": "Jonas Hermsmeier <jhermsmeier@gmail.com> (https://github.com/jhermsmeier)",
   "dependencies": {
@@ -17,7 +23,6 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "nw",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "homepage": "https://github.com/jhermsmeier/zeugberg",
