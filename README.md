@@ -86,3 +86,7 @@ For example:
 ```
 
 See [nw.js/wiki/App#setproxyconfigconfig](https://github.com/nwjs/nw.js/wiki/App#setproxyconfigconfig)
+
+### Running Zeugberg on Travis CI
+
+See [Travis CI Docs](http://docs.travis-ci.com/user/gui-and-headless-browsers/)
