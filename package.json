@@ -1,6 +1,6 @@
 {
   "name": "zeugberg",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "",
   "license": "MIT",
   "keywords": [
@@ -19,7 +19,7 @@
     "glob-stream": "~5.0.0",
     "inspector": "~0.5.0",
     "nw": "~0.12.0-1",
-    "yargs": "~3.6.0"
+    "yargs": "~3.7.0"
   },
   "devDependencies": {},
   "scripts": {
