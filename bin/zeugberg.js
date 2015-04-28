@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-var nw = require( 'nw' )
+var bin = require( 'electron-prebuilt' )
 var path = require( 'path' )
 var childProcess = require( 'child_process' )
 var log = require( 'debug' )( 'ZEUGBERG:CLI' )
@@ -7,9 +7,6 @@ var inspect = require( 'util' ).inspect
 
 // Get nw.js root path (package to execute)
 var root = path.join( __dirname, '..' )
-// Path to nw.js executable
-var bin = nw.findpath()
-
 // Get cli arguments for nw.js
 var argv = process.argv.slice( 2 )
 
