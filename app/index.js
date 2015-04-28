@@ -1,6 +1,6 @@
 var package = require( '../package' )
 var path = require( 'path' )
-var Zeugberg = require( '../lib/zeugberg' )
+var Zeugberg = require( './zeugberg' )
 var app = require( 'app' )
 var BrowserWindow = require( 'browser-window' )
 
