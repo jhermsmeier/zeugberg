@@ -85,11 +85,6 @@ Page.prototype = {
       global[ varname ] = frame.eval( null, 'this.' + varname )
     })
     
-    // Patch nw.js' console.*() for nice output
-    // NOTE: Has to be done on every context patch,
-    // to keep window.console up to date...
-    require( './console' )()
-    
     // DOM helpers
     // global.$ = context.$
     // global.$$ = context.$$
