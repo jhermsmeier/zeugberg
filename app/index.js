@@ -4,7 +4,9 @@ var Zeugberg = require( '../lib/zeugberg' )
 var app = require( 'app' )
 var BrowserWindow = require( 'browser-window' )
 
-var mainWindow = null
+// Global reference to the main window
+// NOTE: Using a global because of GC behavior
+main = null
 
 app.on( 'window-all-closed', function() {
   app.quit()
@@ -12,7 +14,7 @@ app.on( 'window-all-closed', function() {
 
 app.on( 'ready', function() {
   
-  mainWindow = new BrowserWindow({
+  main = new BrowserWindow({
     width: 800,
     height: 600,
     center: true,
@@ -21,11 +23,11 @@ app.on( 'ready', function() {
     'enable-larger-than-screen': true,
   })
   
-  mainWindow.on( 'closed', function() {
-    mainWindow = null
+  main.on( 'closed', function() {
+    main = null
   })
   
-  mainWindow.loadUrl( 'about:blank' )
+  main.loadUrl( 'about:blank' )
   
   var specs = path.join( process.cwd(), 'test/**/*.js' )
   var zeugberg = new Zeugberg()
