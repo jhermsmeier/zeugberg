@@ -1,14 +1,14 @@
 {
   "name": "zeugberg",
   "version": "0.11.1",
-  "description": "",
+  "description": "Dr. John A. Zoidberg in Kreuzberg",
   "license": "MIT",
   "keywords": [
     "test",
     "tests",
     "testing",
     "integration",
-    "nw"
+    "electron"
   ],
   "main": "app",
   "author": "Jonas Hermsmeier <jhermsmeier@gmail.com> (https://github.com/jhermsmeier)",
@@ -33,24 +33,6 @@
   "bugs": {
     "url": "https://github.com/jhermsmeier/zeugberg/issues"
   },
-  "single-instance": false,
-  "window": {
-    "title": "zeugberg",
-    "width": 1024,
-    "height": 768,
-    "position": "center",
-    "resizable": "true",
-    "show": false,
-    "focus": false
-  },
-  "webkit": {
-    "plugin": false,
-    "java": false,
-    "page-cache": false
-  },
-  "chromium-args": "--ignore-certificate-errors --remote-debugging-port=9222",
-  "user-agent": "%name %ver (nw %nwver) (webkit %webkit_ver) (os %osinfo)",
-  "node-remote": "<local>",
   "bin": {
     "zeugberg": "app/bin/zeugberg.js"
   }
