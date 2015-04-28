@@ -52,6 +52,6 @@
   "user-agent": "%name %ver (nw %nwver) (webkit %webkit_ver) (os %osinfo)",
   "node-remote": "<local>",
   "bin": {
-    "zeugberg": "bin/zeugberg.js"
+    "zeugberg": "app/bin/zeugberg.js"
   }
 }
