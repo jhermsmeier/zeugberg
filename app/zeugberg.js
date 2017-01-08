@@ -34,6 +34,11 @@ function Zeugberg( options ) {
   
   this.loadReporters( this.options.reporter )
   
+  process.on(
+    'uncaughtException',
+    this.handleException.bind( this )
+  )
+  
 }
 
 Zeugberg.Page = require( './page' )
@@ -48,6 +53,37 @@ Zeugberg.Test = require( './test' )
 Zeugberg.prototype = {
   
   constructor: Zeugberg,
+  
+  handleException: function( error ) {
+    
+    log( 'UNCAUGHT:EXCEPTION', error )
+    
+    // If we're not running a suite or a test; crash & burn
+    if( !this.currentSuite || !this.currentTest ) {
+      var msg = error.stack || error.message
+      log( 'IMMEDIATE EXIT' )
+      process.stderr.write( '\n' + msg + '\n\n', function() {
+        process.kill( process.pid )
+      })
+    }
+    
+    // If we're currently running a test,
+    // forcefully trigger failure on it
+    if( this.currentTest != null ) {
+      log( 'FAIL:TEST' )
+      this.currentTest.fail( error )
+    }
+    
+    // If we're currently in a suite,
+    // but not running a specific test,
+    // trigger failure & bail out
+    if( this.currentSuite != null ) {
+      log( 'FAIL:SUITE' )
+      this.currentSuite.bail = true
+      this.currentSuite.fail( error )
+    }
+    
+  },
   
   load: function( patterns, callback ) {
     

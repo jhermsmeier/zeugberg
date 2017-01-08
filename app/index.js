@@ -29,6 +29,7 @@ app.on( 'ready', function() {
   
   main.loadUrl( 'about:blank' )
   
+  // TODO: Use argv as Zeugberg options
   var specs = path.join( process.cwd(), 'test/**/*.js' )
   var zeugberg = new Zeugberg()
   

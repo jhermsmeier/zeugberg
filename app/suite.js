@@ -140,6 +140,11 @@ Suite.prototype = {
     return this.addSuite( title, fn, true )
   },
   
+  fail: function( error ) {
+    this.bail = true
+    this.emit( 'error', error )
+  },
+  
 }
 
 // Exports

@@ -16,6 +16,7 @@ function Test( title, fn, suite ) {
   this.title = title
   this.parent = suite
   this.fn = fn
+  this.state = 'initial'
   
 }
 
@@ -46,7 +47,7 @@ Test.prototype = {
     
     if( this.isAsync ) {
       try { this.fn.call( this.parent, done ) }
-      catch( e ) { return done( e ) }
+      catch( e ) { done( e ) }
       return
     } else {
       try { this.fn.call( this.parent ) }
@@ -54,6 +55,11 @@ Test.prototype = {
       return done()
     }
     
+  },
+  
+  fail: function( error ) {
+    this.state = 'failed'
+    this.emit( 'error', error )
   },
   
 }
